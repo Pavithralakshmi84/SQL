@@ -53,7 +53,7 @@ CREATE TABLE staff_attendance (
     FOREIGN KEY (movie_id) REFERENCES movies(movie_id)
 );
 
--- 6. TECHNICIANS with FK to movies
+
 CREATE TABLE technicians (
     technician_id INT PRIMARY KEY AUTO_INCREMENT,
     movie_id INT,
@@ -63,8 +63,6 @@ CREATE TABLE technicians (
     daily_rate DECIMAL(10,2),
     FOREIGN KEY (movie_id) REFERENCES movies(movie_id)
 );
-
--- Insert sample data (5 records each)
 INSERT INTO movies (title, release_year) VALUES
 ('Jailer 2', 2025),('Leo', 2023),('Vikram', 2022),('RRR', 2022),('Masterpiece', 2024);
 
