@@ -1,14 +1,14 @@
 CREATE DATABASE movie1;
 USE movie1;
 
--- 1. MOVIES (Parent Table)
+
 CREATE TABLE movies (
     movie_id INT PRIMARY KEY AUTO_INCREMENT,
     title VARCHAR(100),
     release_year YEAR
 );
 
--- 2. CASTING with FK to movies
+
 CREATE TABLE casting (
     casting_id INT PRIMARY KEY AUTO_INCREMENT,
     movie_id INT,
@@ -18,7 +18,7 @@ CREATE TABLE casting (
     FOREIGN KEY (movie_id) REFERENCES movies(movie_id)
 );
 
--- 3. MATERIAL with FK to movies
+
 CREATE TABLE material (
     material_id INT PRIMARY KEY AUTO_INCREMENT,
     movie_id INT,
@@ -29,7 +29,7 @@ CREATE TABLE material (
     FOREIGN KEY (movie_id) REFERENCES movies(movie_id)
 );
 
--- 4. SALARY_MAINTENANCE with FK to movies
+
 CREATE TABLE salary_maintenance (
     salary_id INT PRIMARY KEY AUTO_INCREMENT,
     movie_id INT,
@@ -41,7 +41,7 @@ CREATE TABLE salary_maintenance (
     FOREIGN KEY (movie_id) REFERENCES movies(movie_id)
 );
 
--- 5. STAFF_ATTENDANCE with FK to movies
+
 CREATE TABLE staff_attendance (
     attendance_id INT PRIMARY KEY AUTO_INCREMENT,
     movie_id INT,
@@ -103,5 +103,3 @@ INSERT INTO technicians (movie_id, technician_name, specialization, contact_numb
 (3, 'Venu Camera', 'Camera', '9876543213', 3200.00),
 (4, 'Mani', 'Choreographer', '9876543214', 2200.00);
 
-
-select*from technicians;
