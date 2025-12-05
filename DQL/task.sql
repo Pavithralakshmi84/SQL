@@ -21,55 +21,32 @@ INSERT INTO emp_details (empname, empcity, department, salary) VALUES
 ('Vijay', 'Chennai', 'Marketing', 62000);
 
 SELECT * FROM emp_details;
-
-
-
 SELECT department, COUNT(*) as total_employees FROM emp_details GROUP BY department; 
-
-
-
 SELECT department, AVG(salary) as avg_salary FROM emp_details GROUP BY department; 
-
-
-
 SELECT empcity, COUNT(*) as employee_count FROM emp_details GROUP BY empcity; 
-
-
-
 SELECT department, MIN(salary) as Low_salary, MAX(salary) as high_salary 
 FROM emp_details GROUP BY Department;
-
-
 SELECT department, SUM(salary) as total_salary_spent FROM emp_details GROUP BY department;
-
-
 
 SELECT department, COUNT(*) as total_employees
 FROM emp_details 
 GROUP BY department 
 HAVING COUNT(*) > 2; 
 
-
-
 SELECT department, ROUND(AVG(salary), 2) as avg_salary
 FROM emp_details 
 GROUP BY department 
 HAVING AVG(salary) > 50000;
-
-
 
 SELECT empcity, COUNT(*) as employee_count
 FROM emp_details 
 GROUP BY empcity 
 HAVING COUNT(*) > 1; 
 
-
-
 SELECT department, MAX(salary) as highest_salary
 FROM emp_details 
 GROUP BY department 
 HAVING MAX(salary) > 40000; 
-
 
 SELECT department, SUM(salary) as total_salary_spent
 FROM emp_details 
@@ -85,4 +62,3 @@ SELECT department, ROUND(AVG(salary), 2) as dept_avg
 FROM emp_details 
 GROUP BY department 
 HAVING AVG(salary) > (SELECT AVG(salary) FROM emp_details);
-
