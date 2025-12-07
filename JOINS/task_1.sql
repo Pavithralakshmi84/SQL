@@ -38,8 +38,6 @@ INSERT INTO products (product_name, product_price) VALUES
 ('Sony WH-1000XM5', 29999.00),
 ('Apple Watch Ultra', 79999.00);
 
-USE Joins;
-
 CREATE TABLE orders (
     order_id INT PRIMARY KEY AUTO_INCREMENT,
     customer_id INT,
@@ -78,23 +76,17 @@ CREATE TABLE students (
     student_id INT PRIMARY KEY AUTO_INCREMENT,
     student_name VARCHAR(100) NOT NULL
 );
-INSERT INTO students (student_name) VALUES
-('Vani'), ('Kumar'), ('Sathish'), ('Regana'), ('Mercy');
+
+
 select * from students;
 
-use joins;
+
 CREATE TABLE courses (
     course_id INT PRIMARY KEY AUTO_INCREMENT,
     course_name VARCHAR(100) NOT NULL,
     teacher VARCHAR(100) NOT NULL
 );
 
-INSERT INTO courses (course_name, teacher) VALUES
-('Math', 'Merslin Marry'),
-('Science', 'Parameshwari'),
-('English', 'Alen'),
-('History', 'kamalesh'),
-('Physics', 'Vani'); 
 
 select * from courses;
 
