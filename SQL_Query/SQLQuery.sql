@@ -1,3 +1,6 @@
+Create database Details;
+use Details;
+
 -- 1. CREATE TABLE statements
 CREATE TABLE Student (
     StudentID INT PRIMARY KEY,
@@ -81,3 +84,4 @@ DROP TABLE Staff;
 DROP TABLE Product;
 DROP TABLE Customer;
 DROP TABLE Employee;
+
