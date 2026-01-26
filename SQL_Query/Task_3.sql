@@ -1,9 +1,9 @@
 ﻿Create database TASK3;
 use TASK3;
 
----------------------------------------------------------
+
 -- 1. CREATE CUSTOMER TABLE
----------------------------------------------------------
+
 CREATE TABLE Customer (
     CustomerID INT PRIMARY KEY,
     FirstName NVARCHAR(50),
@@ -17,9 +17,9 @@ CREATE TABLE Customer (
 
 Select * from Customer;
 
----------------------------------------------------------
+
 -- 2. STORED PROCEDURES
----------------------------------------------------------
+
 
 -- Q1: Add a new customer
 CREATE PROCEDURE sp_AddCustomer
