@@ -1,12 +1,10 @@
 
-
--- 1. Create Database and Your Exact Tables
 CREATE DATABASE CompanyDB;
 GO
 USE CompanyDB;
 GO
 
--- Your EXACT ProductLog table
+
 CREATE TABLE ProductLog (
     LogID INT IDENTITY(1,1) PRIMARY KEY,
     ProductID INT,
@@ -14,7 +12,6 @@ CREATE TABLE ProductLog (
     ActionDate DATETIME DEFAULT GETDATE()
 );
 
--- Your EXACT Employee table (with Salary INT as specified)
 CREATE TABLE Employee (
     EmpID INT IDENTITY(1,1) PRIMARY KEY,
     EmpName VARCHAR(50) NOT NULL,
@@ -22,7 +19,7 @@ CREATE TABLE Employee (
     Dept VARCHAR(50)
 );
 
--- Add Product table (needed for requirements 5,6,7)
+-- Add Product table 
 CREATE TABLE Product (
     ProductID INT IDENTITY(1,1) PRIMARY KEY,
     ProductName VARCHAR(100),
@@ -31,8 +28,8 @@ CREATE TABLE Product (
 );
 GO
 
--- 2. TRIGGER #1: Prevent deleting HR employees (Req #2)
-CREATE TRIGGER tr_PreventHRDelete
+-- 2.  #1: Prevent deleting HR employees 
+CREATE  tr_PreventHRDelete
 ON Employee
 FOR DELETE
 AS
@@ -47,8 +44,8 @@ BEGIN
 END;
 GO
 
--- 3. TRIGGER #2: Auto-increase salary by 10% on update (Req #3)
-CREATE TRIGGER tr_AutoSalaryIncrease
+-- 3.  #2: Auto-increase salary by 10% on update (Req #3)
+CREATE  tr_AutoSalaryIncrease
 ON Employee
 AFTER UPDATE
 AS
@@ -62,8 +59,8 @@ BEGIN
 END;
 GO
 
--- 4. TRIGGER #3: Prevent updating name to NULL (Req #4 - extra safety)
-CREATE TRIGGER tr_PreventNullName
+-- 4.  #3: Prevent updating name to NULL (Req #4 - extra safety)
+CREATE  tr_PreventNullName
 ON Employee
 FOR UPDATE
 AS
@@ -78,8 +75,8 @@ BEGIN
 END;
 GO
 
--- 5. TRIGGER #4: Prevent deleting products with stock (Req #7)
-CREATE TRIGGER tr_PreventStockDelete
+-- 5.  #4: Prevent deleting products with stock (Req #7)
+CREATE  tr_PreventStockDelete
 ON Product
 FOR DELETE
 AS
@@ -94,9 +91,9 @@ BEGIN
 END;
 GO
 
--- 6. TRIGGER #5: Auto-reduce stock on Product update (Req #6)
+-- 6.  #5: Auto-reduce stock on Product update (Req #6)
 -- Assumes update reduces stock (like sales processing)
-CREATE TRIGGER tr_AutoReduceStock
+CREATE  tr_AutoReduceStock
 ON Product
 AFTER UPDATE
 AS
